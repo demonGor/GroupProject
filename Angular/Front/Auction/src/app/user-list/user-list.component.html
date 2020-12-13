@@ -1,0 +1,11 @@
+<h3>
+  Користувачі
+</h3>
+
+<h5>Логін</h5>
+<ul *ngFor="let user of Users">
+    <li >
+        <h6><b>{{user.Name}}    </b>    <button style="margin: 3px" (click)="deleteUser(user.Id)">Видалити</button> </h6>
+    </li>
+    
+</ul>

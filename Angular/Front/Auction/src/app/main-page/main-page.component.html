@@ -1,0 +1,14 @@
+<div>
+    <ng-content *ngIf="isUserSignedIn$;  then signedIn; else signedOut">
+      </ng-content>
+      <ng-template #signedIn>
+       
+            <h1>Вітаємо, {{UserName$}}!</h1>
+            <h2>Вдалих покупок чи продаж.</h2>
+       
+      </ng-template>
+      <ng-template #signedOut>
+        <h2>Вітаємо!</h2>
+        <h3>Авторизуйтесь для того щоб купувати або виставляти лоти</h3>
+      </ng-template>
+</div>

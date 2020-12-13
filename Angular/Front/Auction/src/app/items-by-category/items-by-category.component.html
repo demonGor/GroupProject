@@ -1,0 +1,27 @@
+<ul *ngFor="let item of Items">
+    <li >
+        <h6>Назва лоту: <b>{{item.Title}}</b> </h6>
+        <h6>Опис: <b>{{item.Description}}</b> </h6>
+        <h6>Категорія: <b>{{item.CategoryName}}</b> </h6>
+        <h6>Стартова ціна: <b>{{item.StartingPrice}} грн</b> </h6>
+        <h6>Мінімальне збільшення ставки: <b>{{item.MinIncrease}} грн</b> </h6>
+        <h6>Дата початку: <b>{{item.StartTime}}</b> </h6>
+        <h6>Дата закінчення: <b>{{item.EndTime}}</b> </h6>
+        <img src="{{item.Image}}" width="140" height="140" >
+       
+        
+    </li>
+    <button style="margin: 10px" (click)="showWinner(item.Id)">Показати поточного переможця</button>
+    <ng-content *ngIf="isUserSignedIn$ && isAdmin$;  then admin">
+        </ng-content>
+        <ng-template #admin>
+            <button style="margin: 10px" (click)="routeToEdit(item.Id)">Редагувати</button>
+                <button style="margin: 10px" (click)="deleteItem(item.Id)">Видалити</button>
+              </ng-template>
+       
+              <ng-content *ngIf="isUserSignedIn$ && !isAdmin$;  then user">
+                </ng-content>
+                <ng-template #user>
+        <button style="margin: 10px" (click)="routeToBid(item.Id)">Запропонувати свою пропозицію</button>
+    </ng-template>
+      

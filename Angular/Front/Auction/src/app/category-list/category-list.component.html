@@ -1,0 +1,24 @@
+<h3>
+    Кaтегорії
+  </h3>
+  <ng-content *ngIf="isUserSignedIn$ && isAdmin$; then adminCreate;"> </ng-content>
+  <ng-template #adminCreate>
+      <button style="margin: 10px" (click)="routeToCategorycreate()" >Додати нову категорію</button>
+    </ng-template>
+
+  <h5>Назва</h5>
+ 
+      <ul *ngFor="let category of Categories">
+          <li >
+              <h6><b>{{category.Name}}    </b>   <button style="margin: 3px" (click)="routeToItemsByCategory(category.Id)" >Лоти даної категорії</button> </h6>
+          </li>
+         
+      </ul>
+     
+    
+   
+
+      
+
+
+  

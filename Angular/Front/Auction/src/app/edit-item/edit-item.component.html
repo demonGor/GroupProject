@@ -1,0 +1,13 @@
+<h5>Назва лота</h5>
+<input  [(ngModel)]="item.Title" >
+<h5>Опис лота</h5>
+<input  [(ngModel)]="item.Description" >
+<h5>Посилання на картинку</h5>
+<input [(ngModel)]="item.Image" >
+<h5>Стартова ціна</h5>
+<input type="number"  [(ngModel)]="item.StartingPrice" > грн
+<h5>Мінімальне збільшення ставки</h5>
+<input type="number"  [(ngModel)]="item.MinIncrease" > грн
+
+<div><button (click)="updateItem()">Оновити</button></div>
+   

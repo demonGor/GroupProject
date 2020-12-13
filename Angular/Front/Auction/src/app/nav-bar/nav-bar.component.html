@@ -1,0 +1,32 @@
+<div>
+    <a [routerLink]="['main-page']">Головна </a>
+    <a  [routerLink]="['categories']">Категорії </a>
+    <a  [routerLink]="['allItems']">Всі лоти </a>
+    <a  [routerLink]="['liveItems']">Активні лоти </a>
+    <ng-content *ngIf="isUserSignedIn$ && !isAdmin$; then items">
+      </ng-content>
+    <ng-template #items>
+        <a  [routerLink]="['myItems']">Мої лоти </a>
+      </ng-template>
+
+    
+
+
+    <ng-content *ngIf="isUserSignedIn$ && isAdmin$;  then admin">
+      </ng-content>
+    <ng-template #admin>
+        <a  [routerLink]="['users']">Користувачі </a>
+      </ng-template>
+
+      <ng-content *ngIf="isUserSignedIn$;  then signedIn; else signedOut">
+        </ng-content>
+      <ng-template #signedIn>
+        <button  (click)="signOut()">Вийти</button>
+      </ng-template>
+      <ng-template #signedOut>
+      
+        <a  [routerLink]="['sign-in']">Увійти </a>
+        <a  [routerLink]="['sign-up']">Зареєструватись </a>
+      </ng-template>
+    
+  </div>

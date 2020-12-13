@@ -1,0 +1,22 @@
+<h5>Назва лота</h5>
+<input placeholder="Назва" [(ngModel)]="Title" required="true" maxlength="120" >
+<h5>Опис лота</h5>
+<input placeholder="Опис" [(ngModel)]="Description" required="true" maxlength="500" >
+<h5>Посилання на картинку</h5>
+<input placeholder="URL" [(ngModel)]="Image" >
+<h5>Стартова ціна</h5>
+<input type="number" placeholder="100" [(ngModel)]="StartingPrice" required="true" min="0.01 " max="79228162514264337593543950335"> грн
+<h5>Мінімальне збільшення ставки</h5>
+<input type="number" placeholder="100" [(ngModel)]="MinIncrease" required="true" min="0.01" max="79228162514264337593543950335"> грн
+<h5>Дата початку</h5>
+<input type="date"  [(ngModel)]="StartTime" required="true" > 
+<h5>Дата завершення</h5>
+<input type="date"  [(ngModel)]="EndTime" required="true" > 
+<h5>Виберіть категорію для лота</h5>
+   <div>
+    <select [(ngModel)]="selectedCategory">
+    <option *ngFor="let x of Categories" [ngValue]="x">{{x.Name}}</option>
+      
+    </select>
+   </div>
+   <button (click)="addItem()">Додати</button>

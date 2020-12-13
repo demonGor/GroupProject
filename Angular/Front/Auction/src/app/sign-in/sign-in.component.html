@@ -1,0 +1,19 @@
+<div>
+  <h2>Логін</h2>
+  <input
+    placeholder="Username"
+    [(ngModel)]="username"
+    name="username"
+    required
+  />
+  <h2>Пароль</h2>
+  <input
+    placeholder="Password"
+    [(ngModel)]="password"
+    type="password"
+    name="password"
+    required
+  />
+  <div><button (click)="login()" color="primary">Увійти</button></div>
+  
+</div>
